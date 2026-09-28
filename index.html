@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AirWeb Communication | Premium Fiber & Wireless Internet</title>
+<meta name="description" content="Pakistan's premium zero-downtime internet network. Serving Bahawalpur, Liaqatpur, Feroza, Khanpur, and Zahir Pir for over 12 years with fiber and wireless broadband from 1 Mbps to 100 Mbps, plus business and ISP wholesale solutions." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-display { font-family: 'Space Grotesk', sans-serif; }
+  .brand-green { color: #0B6E38; }
+  .bg-brand-green { background-color: #0B6E38; }
+  .bg-brand-green-light { background-color: #E8F5EC; }
+  .border-brand-green { border-color: #0B6E38; }
+  .transition-all-smooth { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+</style>
+</head>
+<body class="bg-[#FAFAFA] text-black antialiased overflow-x-hidden">
+
+<!-- NAVIGATION BAR -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group flex-shrink-0">
+      <svg width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-105 transition-transform duration-300">
+        <rect width="32" height="32" rx="10" fill="#0A0A0A"/>
+        <path d="M6 20C6 20 10 12 16 12C22 12 26 20 26 20" stroke="#1DB954" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M11 20C11 20 13 15 16 15C19 15 21 20 21 20" stroke="#1DB954" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <circle cx="16" cy="21" r="2" fill="#1DB954"/>
+      </svg>
+      <span class="text-xl font-extrabold tracking-tight">Air<span class="brand-green">Web</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-6 text-[13.5px] font-semibold text-neutral-600">
+      <button onclick="switchView('home')" class="hover:text-black transition">Home</button>
+      <button onclick="switchView('plans')" class="hover:text-black transition">Plans & Pricing</button>
+      <button onclick="switchView('coverage')" class="hover:text-black transition">Cities & Coverage</button>
+      <button onclick="switchView('about')" class="hover:text-black transition">About</button>
+      <button onclick="switchView('contact')" class="hover:text-black transition">Contact</button>
+      <button onclick="switchView('portal')" class="hover:text-black transition flex items-center gap-1.5 py-1 px-3 bg-neutral-100 rounded-full text-neutral-800 hover:bg-neutral-200 transition">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> My Portal
+      </button>
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+      <a href="https://wa.me/923126822845" target="_blank" aria-label="WhatsApp Us" class="hidden sm:flex w-10 h-10 rounded-full bg-neutral-100 hover:bg-neutral-200 items-center justify-center transition">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#0B6E38" xmlns="http://www.w3.org/2000/svg">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.751-1.455L0 24zm6.59-4.846c1.713.993 3.415 1.54 5.353 1.54 5.514 0 10.017-4.426 10.02-9.873.001-2.639-1.018-5.12-2.871-6.98-1.854-1.86-4.332-2.883-6.974-2.883-5.517 0-10.02 4.426-10.022 9.874-.001 1.956.52 3.865 1.511 5.539l-1.012 3.694 3.795-1.012z"/>
+        </svg>
+      </a>
+      <button onclick="switchView('quote')" class="bg-brand-green text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full hover:bg-[#095c2f] transition-all duration-300 shadow-sm whitespace-nowrap">
+        Request a Quote
+      </button>
+      <button id="menuBtn" class="lg:hidden text-2xl text-neutral-800">☰</button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-neutral-100 px-6 py-4 flex flex-col gap-1 text-sm font-semibold">
+    <button onclick="switchView('home'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50">Home</button>
+    <button onclick="switchView('plans'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50">Plans & Pricing</button>
+    <button onclick="switchView('coverage'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50">Cities & Coverage</button>
+    <button onclick="switchView('about'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50">About</button>
+    <button onclick="switchView('contact'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50">Contact Us</button>
+    <button onclick="switchView('portal'); toggleMobileMenu()" class="text-left py-3 border-b border-neutral-50 text-brand-green font-bold">My Portal (Billing)</button>
+    <button onclick="switchView('quote'); toggleMobileMenu()" class="mt-3 bg-brand-green text-white font-bold py-3 rounded-xl text-center">Request a Quote →</button>
+    <a href="https://wa.me/923126822845" target="_blank" class="mt-2 border border-neutral-300 font-bold py-3 rounded-xl text-center">💬 WhatsApp Us</a>
+  </div>
+</header>
+
+<!-- MAIN APP CONTROLLER VIEWPORT -->
+<main id="appViewport" class="min-h-screen">
+
+  <!-- ==================== VIEW: HOME ==================== -->
+  <div id="view-home" class="view-pane">
+    
+    <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 pb-20 text-center">
+      <span class="inline-flex items-center gap-1.5 bg-brand-green-light brand-green text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
+        ⚡ 12 Years of Unbroken Trust
+      </span>
+      <h1 class="font-display text-5xl md:text-7xl font-extrabold leading-[1.1] max-w-5xl mx-auto tracking-tight">
+        Internet that actually works.<br><span class="brand-green">Every single second.</span>
+      </h1>
+      <p class="mt-8 text-base md:text-xl text-neutral-500 max-w-2xl mx-auto leading-relaxed">
+        No excuses. No dropouts. Just pure, premium fiber optics and wireless connections serving Bahawalpur, Liaqatpur, Feroza, Khanpur, and Zahir Pir.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button onclick="switchView('plans')" class="w-full sm:w-auto bg-brand-green text-white font-bold px-8 py-4 rounded-full hover:bg-[#095c2f] transition shadow-lg shadow-green-900/10">
+          Explore All Speed Plans
+        </button>
+        <button onclick="switchView('quote')" class="w-full sm:w-auto border border-neutral-300 font-bold px-8 py-4 rounded-full hover:border-black transition bg-white">
+          Request a Free Quote
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-black text-white py-6">
+      <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-between items-center gap-y-4 gap-x-8 text-sm font-medium">
+        <div class="flex items-center gap-2"><span class="text-green-500 text-lg">●</span> 12 Years in Business</div>
+        <div class="flex items-center gap-2"><span class="text-green-500 text-lg">●</span> 5 Major Punjab Cities</div>
+        <div class="flex items-center gap-2"><span class="text-green-500 text-lg">●</span> 1 Mbps to 100 Mbps+</div>
+        <div class="flex items-center gap-2"><span class="text-green-500 text-lg">●</span> Business & ISP Wholesale</div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight leading-tight">
+            Designed for households that cannot afford buffering.
+          </h2>
+          <p class="mt-6 text-neutral-500 leading-relaxed">
+            We don't buy cheap bandwidth. We own and operate our network infrastructure. That means whether you are a programmer working from Bahawalpur, a student in Liaqatpur, or a family streaming in Khanpur, your signal remains strong, latency stays low, and speed remains guaranteed.
+          </p>
+          <div class="mt-10 space-y-6">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-green-light flex items-center justify-center brand-green font-bold">✓</div>
+              <div>
+                <h4 class="font-bold text-lg">Direct Fiber & Clean Wireless</h4>
+                <p class="text-neutral-500 text-sm mt-1">We utilize custom micro-routers and premium glass optics to route your signals cleanly.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-full bg-brand-green-light flex items-center justify-center brand-green font-bold">✓</div>
+              <div>
+                <h4 class="font-bold text-lg">Sovereign Local Support Grid</h4>
+                <p class="text-neutral-500 text-sm mt-1">Our support office is right on Circular Road, Bahawalpur. We dispatch local technicians in hours, not days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative bg-neutral-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden shadow-2xl h-[450px] flex flex-col justify-between">
+          <div class="absolute inset-0 bg-gradient-to-tr from-emerald-950 to-neutral-900 opacity-60"></div>
+          <div class="relative z-10">
+            <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold">The AirWeb Promise</span>
+            <h3 class="font-display text-3xl font-bold mt-3">99.9% Monitored Uptime</h3>
+          </div>
+          <div class="relative z-10 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10">
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-bold text-neutral-300">Live Network Latency Monitor</span>
+              <span class="text-xs bg-emerald-500 text-black px-2.5 py-0.5 rounded-full font-bold">ACTIVE</span>
+            </div>
+            <div class="flex items-end gap-1.5 h-16">
+              <div class="bg-emerald-500/20 w-full h-8 rounded-sm"></div>
+              <div class="bg-emerald-500/30 w-full h-10 rounded-sm"></div>
+              <div class="bg-emerald-500/20 w-full h-7 rounded-sm"></div>
+              <div class="bg-emerald-500/40 w-full h-12 rounded-sm"></div>
+              <div class="bg-emerald-500/50 w-full h-[60px] rounded-sm"></div>
+              <div class="bg-emerald-500 w-full h-[64px] rounded-sm animate-pulse"></div>
+            </div>
+            <p class="text-xs text-neutral-300 mt-3 text-center">Average Ping across all 5 districts: <span class="text-emerald-400 font-bold">12ms</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-neutral-100 py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="font-display text-3xl md:text-5xl font-bold text-center tracking-tight">Our Core Infrastructures</h2>
+        <p class="text-center text-neutral-500 mt-4 max-w-xl mx-auto">Engineered to support remote work, heavy streaming, gaming, business operations, and ISP-to-ISP partnerships.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-neutral-200/60 flex flex-col justify-between">
+            <div>
+              <span class="text-2xl">⚡</span>
+              <h3 class="font-display text-xl font-bold mt-4">Pure Fiber Optics</h3>
+              <p class="mt-3 text-neutral-500 text-sm leading-relaxed">Direct FTTH installation. Immune to rain and interference. Symmetric speeds from 1 Mbps to 100 Mbps.</p>
+            </div>
+            <button onclick="switchView('plans')" class="mt-6 text-left brand-green font-bold hover:underline text-sm">View Plans →</button>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-neutral-200/60 flex flex-col justify-between">
+            <div>
+              <span class="text-2xl">📡</span>
+              <h3 class="font-display text-xl font-bold mt-4">Premium Air-Wireless</h3>
+              <p class="mt-3 text-neutral-500 text-sm leading-relaxed">High-gain point-to-point systems installed by clean alignment teams for immediate residential coverage.</p>
+            </div>
+            <button onclick="switchView('plans')" class="mt-6 text-left brand-green font-bold hover:underline text-sm">View Plans →</button>
+          </div>
+
+          <div class="bg-white rounded-3xl p-8 shadow-sm border border-neutral-200/60 flex flex-col justify-between">
+            <div>
+              <span class="text-2xl">🏢</span>
+              <h3 class="font-display text-xl font-bold mt-4">Business & ISP Wholesale</h3>
+              <p class="mt-3 text-neutral-500 text-sm leading-relaxed">Dedicated bandwidth for companies, plus bulk bandwidth leasing for smaller ISPs and franchise partners.</p>
+            </div>
+            <button onclick="switchView('plans')" class="mt-6 text-left brand-green font-bold hover:underline text-sm">Learn More →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-24 text-center">
+      <h2 class="font-display text-3xl font-bold">Real Words from Our Neighbors</h2>
+      <div class="mt-12 bg-white border border-neutral-200/80 rounded-3xl p-8 md:p-12 relative shadow-sm">
+        <p class="text-lg md:text-2xl text-neutral-800 italic leading-relaxed">
+          "Switched to AirWeb after trying three major mobile networks and another broadband provider in Bahawalpur. For the past two years, my team has run our online shop cleanly without a single client call drop."
+        </p>
+        <div class="mt-6 flex items-center justify-center gap-3">
+          <span class="font-bold text-neutral-900">Muhammad Ibrahim</span>
+          <span class="text-neutral-300">|</span>
+          <span class="brand-green font-semibold text-sm">Circular Road, Bahawalpur</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==================== VIEW: PLANS (EXPANDED) ==================== -->
+  <div id="view-plans" class="view-pane hidden">
+    
+    <section class="max-w-5xl mx-auto px-6 pt-16 pb-6 text-center">
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold tracking-tight">Plans for Every Kind of Connection</h1>
+      <p class="mt-4 text-neutral-500 text-base md:text-lg">From 1 Mbps home starters to 100 Mbps power tiers, plus dedicated business lines and ISP wholesale bandwidth.</p>
+      
+      <div class="mt-12 bg-white border border-neutral-200 rounded-3xl p-6 md:p-10 max-w-3xl mx-auto shadow-sm">
+        <h3 class="font-bold text-lg mb-2">Not Sure What You Need? Get a Quick Estimate</h3>
+        <p class="text-sm text-neutral-400 mb-6">Drag based on how many devices you use — see the full price list below for every tier from 1 to 100 Mbps.</p>
+        
+        <input type="range" id="planSlider" min="1" max="4" value="3" class="w-full h-2 bg-neutral-200 rounded-lg appearance-none cursor-pointer accent-[#0B6E38]" oninput="updateCalculator()">
+        
+        <div class="grid grid-cols-4 text-xs font-bold text-neutral-400 mt-3 px-2">
+          <span>1 Device</span><span>Basic Family</span><span>Active Streaming</span><span>Pro/Business</span>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-neutral-100 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="text-left">
+            <span class="text-xs uppercase font-bold tracking-widest text-neutral-400">Recommended Speed Plan</span>
+            <h4 id="calcSpeed" class="font-display text-3xl font-extrabold brand-green mt-1">4 Mbps High-Speed</h4>
+            <p id="calcUse" class="text-xs text-neutral-500 mt-1">Perfect for HD streaming, work-from-home, and multiple phones.</p>
+          </div>
+          <div class="text-center md:text-right">
+            <span class="text-xs uppercase font-bold tracking-widest text-neutral-400">Monthly Price</span>
+            <div id="calcPrice" class="font-display text-3xl font-extrabold text-black mt-1">Rs. 2,600 <span class="text-sm font-normal text-neutral-500">/ month</span></div>
+          </div>
+        </div>
+        <button onclick="requestQuoteForPlan('4 Mbps - Rs. 2,600/mo')" class="w-full mt-6 bg-black text-white font-bold py-3 rounded-xl text-sm hover:bg-neutral-800 transition">Get a Quote for This Speed</button>
+      </div>
+    </section>
+
+    <!-- FULL RESIDENTIAL PRICING TABLE -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="font-display text-3xl md:text-4xl font-bold">Complete Residential Speed & Pricing Guide</h2>
+        <p class="text-neutral-500 mt-3">Twelve carefully priced tiers — pick exactly what fits your home, not what a bundle forces on you.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-white border border-neutral-200 rounded-3xl shadow-sm">
+        <table class="w-full text-left min-w-[700px]">
+          <thead>
+            <tr class="border-b border-neutral-100 text-xs uppercase font-extrabold text-neutral-400">
+              <th class="py-5 px-6">Speed</th>
+              <th class="py-5 px-6">Monthly Price</th>
+              <th class="py-5 px-6">Best For</th>
+              <th class="py-5 px-6"></th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">1 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 1,000</td>
+              <td class="py-4 px-6 text-neutral-500">Basic browsing, WhatsApp, light use</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('1 Mbps - Rs. 1,000/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">2 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 1,800</td>
+              <td class="py-4 px-6 text-neutral-500">Small families, social media, SD streaming</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('2 Mbps - Rs. 1,800/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 bg-brand-green-light/40 hover:bg-brand-green-light transition">
+              <td class="py-4 px-6 font-bold">4 Mbps <span class="ml-2 text-[9px] bg-brand-green text-white px-2 py-0.5 rounded-full uppercase font-extrabold align-middle">Popular</span></td>
+              <td class="py-4 px-6 font-bold">Rs. 2,600</td>
+              <td class="py-4 px-6 text-neutral-500">HD streaming, multiple devices, WFH</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('4 Mbps - Rs. 2,600/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">6 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 3,200</td>
+              <td class="py-4 px-6 text-neutral-500">Gaming, 4K streaming, heavy households</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('6 Mbps - Rs. 3,200/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">8 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 3,700</td>
+              <td class="py-4 px-6 text-neutral-500">Heavy streaming households, smart homes</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('8 Mbps - Rs. 3,700/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">10 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 4,150</td>
+              <td class="py-4 px-6 text-neutral-500">4K streaming, remote work teams</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('10 Mbps - Rs. 4,150/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">15 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 4,900</td>
+              <td class="py-4 px-6 text-neutral-500">Content creators, large families</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('15 Mbps - Rs. 4,900/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 bg-brand-green-light/40 hover:bg-brand-green-light transition">
+              <td class="py-4 px-6 font-bold">20 Mbps <span class="ml-2 text-[9px] bg-black text-white px-2 py-0.5 rounded-full uppercase font-extrabold align-middle">Best Value</span></td>
+              <td class="py-4 px-6 font-bold">Rs. 5,550</td>
+              <td class="py-4 px-6 text-neutral-500">Competitive gaming, multi-cam streaming</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('20 Mbps - Rs. 5,550/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">30 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 6,550</td>
+              <td class="py-4 px-6 text-neutral-500">Smart homes, home offices</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('30 Mbps - Rs. 6,550/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">50 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 7,950</td>
+              <td class="py-4 px-6 text-neutral-500">Power users, small teams</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('50 Mbps - Rs. 7,950/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">75 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 9,200</td>
+              <td class="py-4 px-6 text-neutral-500">High-demand studios, heavy multi-user homes</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('75 Mbps - Rs. 9,200/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+            <tr class="hover:bg-neutral-50 transition">
+              <td class="py-4 px-6 font-bold">100 Mbps</td>
+              <td class="py-4 px-6 font-bold">Rs. 10,200</td>
+              <td class="py-4 px-6 text-neutral-500">Maximum residential tier available</td>
+              <td class="py-4 px-6"><button onclick="requestQuoteForPlan('100 Mbps - Rs. 10,200/mo')" class="brand-green font-bold hover:underline">Choose →</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-neutral-400 mt-4 text-center">All residential plans include unlimited data, no FUP caps, and free standard installation on 4 Mbps and above.</p>
+    </section>
+
+    <!-- BUSINESS PLANS -->
+    <section class="bg-neutral-100 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-10">
+          <h2 class="font-display text-3xl md:text-4xl font-bold">Business & Enterprise Plans</h2>
+          <p class="text-neutral-500 mt-3">Dedicated bandwidth and guaranteed uptime for companies that can't afford to go offline.</p>
+        </div>
+
+        <div class="overflow-x-auto bg-white border border-neutral-200 rounded-3xl shadow-sm">
+          <table class="w-full text-left min-w-[700px]">
+            <thead>
+              <tr class="border-b border-neutral-100 text-xs uppercase font-extrabold text-neutral-400">
+                <th class="py-5 px-6">Plan</th>
+                <th class="py-5 px-6">Speed</th>
+                <th class="py-5 px-6">Price/Month</th>
+                <th class="py-5 px-6">Includes</th>
+                <th class="py-5 px-6"></th>
+              </tr>
+            </thead>
+            <tbody class="text-sm">
+              <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+                <td class="py-4 px-6 font-bold">Business Basic</td>
+                <td class="py-4 px-6">6 Mbps Dedicated</td>
+                <td class="py-4 px-6 font-bold">Rs. 4,500</td>
+                <td class="py-4 px-6 text-neutral-500">Dedicated line, business-hours priority support</td>
+                <td class="py-4 px-6"><button onclick="requestQuoteForPlan('Business Basic - 6 Mbps Dedicated', 'Business / Corporate Line')" class="brand-green font-bold hover:underline">Get Started →</button></td>
+              </tr>
+              <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+                <td class="py-4 px-6 font-bold">Business Pro</td>
+                <td class="py-4 px-6">10 Mbps Dedicated</td>
+                <td class="py-4 px-6 font-bold">Rs. 7,000</td>
+                <td class="py-4 px-6 text-neutral-500">Static IP, 24/7 support, uptime SLA</td>
+                <td class="py-4 px-6"><button onclick="requestQuoteForPlan('Business Pro - 10 Mbps Dedicated', 'Business / Corporate Line')" class="brand-green font-bold hover:underline">Get Started →</button></td>
+              </tr>
+              <tr class="border-b border-neutral-50 hover:bg-neutral-50 transition">
+                <td class="py-4 px-6 font-bold">Business Elite</td>
+                <td class="py-4 px-6">25 Mbps Dedicated</td>
+                <td class="py-4 px-6 font-bold">Rs. 15,000</td>
+                <td class="py-4 px-6 text-neutral-500">Static IP block, redundant link, account manager</td>
+                <td class="py-4 px-6"><button onclick="requestQuoteForPlan('Business Elite - 25 Mbps Dedicated', 'Business / Corporate Line')" class="brand-green font-bold hover:underline">Get Started →</button></td>
+              </tr>
+              <tr class="hover:bg-neutral-50 transition">
+                <td class="py-4 px-6 font-bold">Enterprise</td>
+                <td class="py-4 px-6">Custom (50–100+ Mbps)</td>
+                <td class="py-4 px-6 font-bold">Contact Sales</td>
+                <td class="py-4 px-6 text-neutral-500">Dedicated account manager, custom SLA & infrastructure</td>
+                <td class="py-4 px-6"><button onclick="requestQuoteForPlan('Enterprise - Custom Requirement', 'Business / Corporate Line')" class="brand-green font-bold hover:underline">Contact Sales →</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISP WHOLESALE / CORPORATE BANDWIDTH SHARING -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <div class="bg-black text-white rounded-3xl p-8 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold text-emerald-400">For ISPs & Franchise Partners</span>
+          <h2 class="font-display text-3xl md:text-4xl font-bold mt-3">Bandwidth Wholesale & Reseller Partnerships</h2>
+          <p class="mt-5 text-neutral-300 leading-relaxed text-sm">
+            Running a smaller local ISP or cable network and need reliable upstream bandwidth without building your own long-haul infrastructure? AirWeb leases bulk bandwidth in flexible blocks directly from our core fiber ring — backed by the same 99.9% uptime standard we guarantee our own customers.
+          </p>
+          <ul class="mt-6 space-y-3 text-sm text-neutral-300">
+            <li class="flex gap-2"><span class="text-emerald-400">✔</span> Dedicated blocks starting from 100 Mbps, scalable to multiple Gbps</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✔</span> Redundant fiber ring backbone with automatic failover</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✔</span> SLA-backed uptime commitments and priority fault resolution</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✔</span> Dedicated account manager for partner ISPs</li>
+          </ul>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+          <p class="text-sm text-neutral-300">Wholesale pricing is customized based on volume, location, and contract length.</p>
+          <p class="font-display text-2xl font-bold mt-4">Let's discuss your bandwidth needs.</p>
+          <button onclick="requestQuoteForPlan('Custom / Enterprise Requirement', 'ISP Wholesale Bandwidth Partnership')" class="mt-6 w-full bg-emerald-500 text-black font-bold py-3.5 rounded-xl hover:bg-emerald-400 transition">
+            Request Wholesale Partnership Quote
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUNDLES -->
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+      <div class="bg-white border border-neutral-200 rounded-3xl p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold brand-green">Seasonal Incentive</span>
+          <h3 class="font-display text-2xl font-bold mt-2">Pay 10 Months. Get 12 Active.</h3>
+        </div>
+        <p class="text-sm text-neutral-500 md:col-span-2 leading-relaxed">
+          Switch to annual payment on any residential plan and get 2 months completely free, plus a complimentary router maintenance check from our technical team.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==================== VIEW: COVERAGE ==================== -->
+  <div id="view-coverage" class="view-pane hidden">
+    
+    <section class="max-w-7xl mx-auto px-6 py-16">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">Our Five-City Footprint</h1>
+        <p class="mt-4 text-neutral-500">We don't expand blindly. We build robust, reliable local operations in each town we step into.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="flex flex-col gap-3">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-400 mb-2 px-2">Choose Your Area</span>
+          
+          <button onclick="setActiveCity('bwp')" id="btn-city-bwp" class="city-tab-btn text-left p-5 rounded-2xl border-2 border-brand-green bg-white transition-all duration-300">
+            <h4 class="font-bold text-lg text-black">Bahawalpur (HQ)</h4>
+            <p class="text-xs text-neutral-500 mt-1">Fiber & Air-Wireless Infrastructure Active</p>
+          </button>
+
+          <button onclick="setActiveCity('lqp')" id="btn-city-lqp" class="city-tab-btn text-left p-5 rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-neutral-400">
+            <h4 class="font-bold text-lg text-black">Liaqatpur</h4>
+            <p class="text-xs text-neutral-500 mt-1">High-Speed Point-to-Point Networks</p>
+          </button>
+
+          <button onclick="setActiveCity('frz')" id="btn-city-frz" class="city-tab-btn text-left p-5 rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-neutral-400">
+            <h4 class="font-bold text-lg text-black">Feroza</h4>
+            <p class="text-xs text-neutral-500 mt-1">Pure High-Gain Wireless Service Grid</p>
+          </button>
+
+          <button onclick="setActiveCity('knp')" id="btn-city-knp" class="city-tab-btn text-left p-5 rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-neutral-400">
+            <h4 class="font-bold text-lg text-black">Khanpur</h4>
+            <p class="text-xs text-neutral-500 mt-1">Fast Fiber Systems & Premium Air Wireless</p>
+          </button>
+
+          <button onclick="setActiveCity('zhp')" id="btn-city-zhp" class="city-tab-btn text-left p-5 rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-neutral-400">
+            <h4 class="font-bold text-lg text-black">Zahir Pir</h4>
+            <p class="text-xs text-neutral-500 mt-1">New Expanded Regional Network</p>
+          </button>
+        </div>
+
+        <div class="md:col-span-2 bg-white border border-neutral-200 rounded-3xl p-8 md:p-12 shadow-sm flex flex-col justify-between min-h-[450px]">
+          
+          <div id="city-content-bwp" class="city-content-panel space-y-6">
+            <span class="inline-block bg-brand-green-light brand-green text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Primary Headquarters Network</span>
+            <h2 class="font-display text-3xl font-extrabold text-black">Bahawalpur Operations</h2>
+            <p class="text-neutral-500 leading-relaxed">
+              Our central network hub. From Haroon Plaza on Circular Road, we monitor the entire five-city grid, host central database backups, and coordinate our technical teams.
+            </p>
+            <div class="pt-6 border-t border-neutral-100 grid grid-cols-2 gap-4">
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local HQ Address</span><p class="text-sm font-bold mt-1 text-neutral-800">Haroon Plaza, Circular Road, Bahawalpur</p></div>
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local Support Lane</span><p class="text-sm font-bold mt-1 brand-green">📞 0312-6822845</p></div>
+            </div>
+          </div>
+
+          <div id="city-content-lqp" class="city-content-panel space-y-6 hidden">
+            <span class="inline-block bg-brand-green-light brand-green text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Active Regional Office</span>
+            <h2 class="font-display text-3xl font-extrabold text-black">Liaqatpur Service Zone</h2>
+            <p class="text-neutral-500 leading-relaxed">Serving residential sectors and surrounding business areas of Liaqatpur with response times inside the 2-hour window.</p>
+            <div class="pt-6 border-t border-neutral-100 grid grid-cols-2 gap-4">
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Area Infrastructure</span><p class="text-sm font-bold mt-1 text-neutral-800">Point-to-Point Wireless Grid</p></div>
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local Support</span><p class="text-sm font-bold mt-1 brand-green">📞 0312-6822845</p></div>
+            </div>
+          </div>
+
+          <div id="city-content-frz" class="city-content-panel space-y-6 hidden">
+            <span class="inline-block bg-brand-green-light brand-green text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Local Service Zone</span>
+            <h2 class="font-display text-3xl font-extrabold text-black">Feroza Regional Network</h2>
+            <p class="text-neutral-500 leading-relaxed">High-gain wireless receivers deliver stable bandwidth directly to rooftops, backed by battery relays during power cuts.</p>
+            <div class="pt-6 border-t border-neutral-100 grid grid-cols-2 gap-4">
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Installation Window</span><p class="text-sm font-bold mt-1 text-neutral-800">24 to 48 hours</p></div>
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local Support</span><p class="text-sm font-bold mt-1 brand-green">📞 0312-6822845</p></div>
+            </div>
+          </div>
+
+          <div id="city-content-knp" class="city-content-panel space-y-6 hidden">
+            <span class="inline-block bg-brand-green-light brand-green text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Commercial Link Hub</span>
+            <h2 class="font-display text-3xl font-extrabold text-black">Khanpur Service Area</h2>
+            <p class="text-neutral-500 leading-relaxed">Dual-channel fiber systems serving commercial houses, grain dealers, and academic centers with low latency year-round.</p>
+            <div class="pt-6 border-t border-neutral-100 grid grid-cols-2 gap-4">
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Active Options</span><p class="text-sm font-bold mt-1 text-neutral-800">Fiber Backed & PtP Microwave Link</p></div>
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local Support</span><p class="text-sm font-bold mt-1 brand-green">📞 0312-6822845</p></div>
+            </div>
+          </div>
+
+          <div id="city-content-zhp" class="city-content-panel space-y-6 hidden">
+            <span class="inline-block bg-brand-green-light brand-green text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Expanded Coverage Zone</span>
+            <h2 class="font-display text-3xl font-extrabold text-black">Zahir Pir Regional Network</h2>
+            <p class="text-neutral-500 leading-relaxed">Our newest regional expansion, bringing reliable internet to families who previously struggled with zero network signals.</p>
+            <div class="pt-6 border-t border-neutral-100 grid grid-cols-2 gap-4">
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Base Latency</span><p class="text-sm font-bold mt-1 text-neutral-800">14ms – 18ms average</p></div>
+              <div><span class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Local Support</span><p class="text-sm font-bold mt-1 brand-green">📞 0312-6822845</p></div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-neutral-400 font-bold">🔧 Service Operations Active 24/7</span>
+            <button onclick="switchView('quote')" class="bg-black text-white text-xs font-bold px-6 py-3 rounded-full hover:bg-neutral-800 transition">Request Instant Connection</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== VIEW: ABOUT ==================== -->
+  <div id="view-about" class="view-pane hidden">
+    <section class="max-w-4xl mx-auto px-6 py-20">
+      <span class="text-xs uppercase font-extrabold tracking-widest brand-green">The AirWeb Story</span>
+      <h1 class="font-display text-4xl md:text-6xl font-extrabold tracking-tight mt-3">Twelve years. Five cities. One belief.</h1>
+      
+      <p class="mt-8 text-lg text-neutral-700 leading-relaxed font-light">
+        AirWeb Communication didn't start as a corporate entity with venture funding. We started twelve years ago with a simple local tower and one core resolution: <strong class="font-semibold text-black">reliability above everything.</strong>
+      </p>
+
+      <div class="mt-12 space-y-8 text-neutral-600 leading-relaxed">
+        <p>At a time when internet services across South Punjab were notorious for random daily shutdowns and outsourced customer service that never answered calls, we built our own network from the ground up.</p>
+        <p>As our trust grew, we systematically branched out from our central operations in <strong class="text-black font-medium">Bahawalpur</strong>, expanding to <strong class="text-black font-medium">Liaqatpur, Feroza, Khanpur</strong>, and eventually <strong class="text-black font-medium">Zahir Pir</strong>.</p>
+        <p class="border-l-4 border-brand-green pl-6 italic text-neutral-800 my-10 text-lg">
+          "We never forgot that behind every connection is a child attending a digital class, an entrepreneur managing global orders, or a family checking in on their loved ones."
+        </p>
+        <p>Today, we operate one of the region's most stable independent network structures — and our promise remains exactly what it was on day one: zero excuses, zero downtime, real support.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-16 pt-12 border-t border-neutral-200">
+        <div>
+          <h4 class="font-bold text-lg text-neutral-900">Haroon Plaza Central Office</h4>
+          <p class="text-sm text-neutral-500 mt-1">Our administrative base coordinating engineering, field deployments, and emergency dispatches 24 hours a day.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-neutral-900">12-Year Engineering Team</h4>
+          <p class="text-sm text-neutral-500 mt-1">Seasoned local network engineers who monitor your latency and line status around the clock.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== VIEW: CONTACT US (NEW) ==================== -->
+  <div id="view-contact" class="view-pane hidden">
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">Let's Talk. We're Easy to Reach.</h1>
+        <p class="mt-4 text-neutral-500">Whether it's a question, a complaint, or just curiosity — reach out through whichever way works for you.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 mb-16">
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6 text-center">
+          <div class="text-2xl">📞</div>
+          <h4 class="font-bold mt-3 text-sm">Call Us</h4>
+          <a href="tel:+923126822845" class="text-xs brand-green font-bold mt-1 block">0312-6822845</a>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6 text-center">
+          <div class="text-2xl">💬</div>
+          <h4 class="font-bold mt-3 text-sm">WhatsApp</h4>
+          <a href="https://wa.me/923126822845" target="_blank" class="text-xs brand-green font-bold mt-1 block">Chat Instantly</a>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6 text-center">
+          <div class="text-2xl">✉️</div>
+          <h4 class="font-bold mt-3 text-sm">Email</h4>
+          <a href="mailto:support@airwebcommunication.pk" class="text-xs brand-green font-bold mt-1 block">support@airwebcommunication.pk</a>
+        </div>
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6 text-center">
+          <div class="text-2xl">🕐</div>
+          <h4 class="font-bold mt-3 text-sm">Support Hours</h4>
+          <p class="text-xs text-neutral-500 mt-1">Sales: 9AM–9PM<br>Technical: 24/7</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <!-- Office Info & Map -->
+        <div>
+          <div class="bg-white border border-neutral-200 rounded-3xl p-8 mb-6">
+            <h3 class="font-display text-xl font-bold mb-4">Head Office</h3>
+            <p class="text-neutral-600 text-sm leading-relaxed">
+              <strong class="text-black">AirWeb Communication Pvt Ltd.</strong><br>
+              Haroon Plaza, Circular Road,<br>
+              Bahawalpur, Punjab, Pakistan.
+            </p>
+            <div class="mt-4 pt-4 border-t border-neutral-100 text-sm text-neutral-500">
+              We also maintain local support presence in Liaqatpur, Feroza, Khanpur, and Zahir Pir — see our
+              <button onclick="switchView('coverage')" class="brand-green font-bold hover:underline">Coverage page</button> for area-specific details.
+            </div>
+          </div>
+          <div class="rounded-3xl overflow-hidden border border-neutral-200 h-72">
+            <iframe
+              width="100%" height="100%" frameborder="0" style="border:0"
+              src="https://maps.google.com/maps?q=Circular%20Road%2C%20Bahawalpur%2C%20Pakistan&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- General Contact Form -->
+        <div class="bg-white border border-neutral-200 rounded-3xl p-8">
+          <h3 class="font-display text-xl font-bold mb-1">Send Us a Message</h3>
+          <p class="text-sm text-neutral-500 mb-6">General inquiries only. For a service quote, use our dedicated <button onclick="switchView('quote')" class="brand-green font-bold hover:underline">Quote Request form</button>.</p>
+
+          <form id="contactForm" action="https://formspree.io/f/mqpawbzn" method="POST" onsubmit="submitFormAjax(event, 'contactFormStatus')" class="space-y-4">
+            <input type="hidden" name="form_type" value="General Contact Inquiry">
+            
+            <div>
+              <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Full Name</label>
+              <input type="text" name="name" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Email</label>
+                <input type="email" name="email" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              </div>
+              <div>
+                <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Phone</label>
+                <input type="tel" name="phone" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              </div>
+            </div>
+            <div>
+              <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Subject</label>
+              <select name="subject" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+                <option>General Question</option>
+                <option>Billing Issue</option>
+                <option>Technical Support</option>
+                <option>Complaint</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Message</label>
+              <textarea name="message" rows="4" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-green text-white font-bold py-3.5 rounded-xl hover:bg-[#095c2f] transition">Send Message</button>
+            <p id="contactFormStatus" class="text-sm text-center"></p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== VIEW: REQUEST A QUOTE (NEW) ==================== -->
+  <div id="view-quote" class="view-pane hidden">
+    <section class="max-w-3xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <span class="inline-block bg-brand-green-light brand-green text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">Free, No-Obligation Quote</span>
+        <h1 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">Get a Personalized Quote</h1>
+        <p class="mt-4 text-neutral-500">Fill in your details below — our sales team will contact you within 24 hours with an exact quote for your location and needs.</p>
+      </div>
+
+      <form id="quoteForm" action="https://formspree.io/f/xkjgkbwo" method="POST" onsubmit="submitFormAjax(event, 'quoteFormStatus')" class="bg-white border border-neutral-200 rounded-3xl p-8 md:p-10 space-y-5">
+        <input type="hidden" name="form_type" value="Quote Request">
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Full Name *</label>
+            <input type="text" name="name" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Phone Number *</label>
+            <input type="tel" name="phone" required placeholder="03XX-XXXXXXX" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Email Address *</label>
+          <input type="email" name="email" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">City *</label>
+            <select name="city" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              <option value="">Select your city...</option>
+              <option>Bahawalpur</option>
+              <option>Liaqatpur</option>
+              <option>Feroza</option>
+              <option>Khanpur</option>
+              <option>Zahir Pir</option>
+              <option>Other / Not Listed</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">I'm Interested In *</label>
+            <select id="quoteServiceSelect" name="service_type" required class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              <option value="">Select an option...</option>
+              <option>Residential Wireless</option>
+              <option>Residential Fiber</option>
+              <option>Business / Corporate Line</option>
+              <option>ISP Wholesale Bandwidth Partnership</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Complete Address / Area *</label>
+          <textarea name="address" rows="2" required placeholder="House/Shop #, Street, Area/Mohallah" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]"></textarea>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Desired Speed / Plan</label>
+            <select id="quoteSpeedSelect" name="desired_speed" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              <option>Not Sure - Recommend For Me</option>
+              <option>1 Mbps - Rs. 1,000/mo</option>
+              <option>2 Mbps - Rs. 1,800/mo</option>
+              <option>4 Mbps - Rs. 2,600/mo</option>
+              <option>6 Mbps - Rs. 3,200/mo</option>
+              <option>8 Mbps - Rs. 3,700/mo</option>
+              <option>10 Mbps - Rs. 4,150/mo</option>
+              <option>15 Mbps - Rs. 4,900/mo</option>
+              <option>20 Mbps - Rs. 5,550/mo</option>
+              <option>30 Mbps - Rs. 6,550/mo</option>
+              <option>50 Mbps - Rs. 7,950/mo</option>
+              <option>75 Mbps - Rs. 9,200/mo</option>
+              <option>100 Mbps - Rs. 10,200/mo</option>
+              <option>Business Basic - 6 Mbps Dedicated</option>
+              <option>Business Pro - 10 Mbps Dedicated</option>
+              <option>Business Elite - 25 Mbps Dedicated</option>
+              <option>Custom / Enterprise Requirement</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Currently Have Internet?</label>
+            <select name="currently_connected" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+              <option>No — First time connection</option>
+              <option>Yes — Switching from another provider</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Preferred Installation Timeframe</label>
+          <select name="timeframe" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]">
+            <option>As soon as possible</option>
+            <option>Within a week</option>
+            <option>Within a month</option>
+            <option>Just exploring options</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-xs font-bold uppercase tracking-wide text-neutral-500">Additional Notes (Optional)</label>
+          <textarea name="notes" rows="3" placeholder="Anything else our sales team should know?" class="w-full mt-1.5 border border-neutral-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E38]"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-brand-green text-white font-bold py-4 rounded-xl hover:bg-[#095c2f] transition text-base">Submit Quote Request</button>
+        <p id="quoteFormStatus" class="text-sm text-center"></p>
+        <p class="text-xs text-neutral-400 text-center">By submitting, you agree to be contacted by our sales team via phone, WhatsApp, or email.</p>
+      </form>
+    </section>
+  </div>
+
+  <!-- ==================== VIEW: PORTAL (BILLING DEMO) ==================== -->
+  <div id="view-portal" class="view-pane hidden">
+    <section class="max-w-6xl mx-auto px-6 py-16">
+      
+      <div id="portal-login-screen" class="max-w-md mx-auto bg-white border border-neutral-200 rounded-3xl p-8 shadow-sm text-center">
+        <div class="w-16 h-16 bg-brand-green-light rounded-full flex items-center justify-center mx-auto text-2xl">🔐</div>
+        <h2 class="font-display text-2xl font-bold mt-6">My AirWeb Portal</h2>
+        <p class="text-neutral-500 text-sm mt-2">Manage your bills, view usage, and track ticket updates directly in real-time.</p>
+        
+        <div class="mt-8 space-y-4 text-left">
+          <div>
+            <label class="text-xs uppercase font-extrabold text-neutral-400">Mock Username</label>
+            <input type="text" value="user@airweb" disabled class="w-full border border-neutral-200 bg-neutral-50 rounded-xl px-4 py-3 text-sm mt-1 focus:outline-none">
+          </div>
+          <div>
+            <label class="text-xs uppercase font-extrabold text-neutral-400">Password</label>
+            <input type="password" value="••••••••" disabled class="w-full border border-neutral-200 bg-neutral-50 rounded-xl px-4 py-3 text-sm mt-1 focus:outline-none">
+          </div>
+          <button onclick="loginPortalDemo()" class="w-full bg-brand-green text-white font-bold py-3.5 rounded-xl text-sm hover:bg-[#095c2f] transition mt-4">
+            Access Demo Dashboard
+          </button>
+        </div>
+      </div>
+
+      <div id="portal-dashboard" class="hidden space-y-8">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-neutral-200">
+          <div>
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Account Standard Active</span>
+            <h1 class="font-display text-3xl font-extrabold text-black mt-2">Welcome Back, Ahmed!</h1>
+            <p class="text-neutral-500 text-sm">Consumer ID: <span class="font-bold text-neutral-800">AW-40893</span> | Bahawalpur Sector</p>
+          </div>
+          <div class="flex gap-3">
+            <button onclick="logoutPortalDemo()" class="text-xs font-bold text-neutral-500 hover:text-black py-2.5 px-4 rounded-xl border border-neutral-200 bg-white">Logout</button>
+            <button onclick="switchView('quote')" class="text-xs font-bold bg-brand-green text-white py-2.5 px-4 rounded-xl hover:bg-[#095c2f]">Request Plan Upgrade</button>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+            <span class="text-xs uppercase font-bold text-neutral-400">Current Assigned Speed</span>
+            <p class="text-3xl font-black mt-2 brand-green">4 Mbps Symmetric</p>
+            <p class="text-xs text-neutral-500 mt-2">Unlimited Plan (Pro)</p>
+          </div>
+          <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+            <span class="text-xs uppercase font-bold text-neutral-400">Outstanding Bill Status</span>
+            <p class="text-3xl font-black mt-2 text-neutral-800">Rs. 0.00</p>
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-[9px] font-bold px-2 py-0.5 rounded-full mt-2">PAID (May Cycle)</span>
+          </div>
+          <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+            <span class="text-xs uppercase font-bold text-neutral-400">Estimated Current Data Usage</span>
+            <p class="text-3xl font-black mt-2 text-neutral-800" id="counterUsage">284.4 GB</p>
+            <p class="text-xs text-neutral-500 mt-2">Reset Date: June 1st</p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-neutral-200 rounded-2xl p-6 md:p-8">
+          <h3 class="font-bold text-lg mb-6">Payment & History Summary</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="border-b border-neutral-100 text-neutral-400 text-xs uppercase font-bold">
+                  <th class="pb-3">Billing Cycle</th><th class="pb-3">Plan Details</th><th class="pb-3">Amount Paid</th><th class="pb-3">Payment Method</th><th class="pb-3">Receipt ID</th>
+                </tr>
+              </thead>
+              <tbody class="text-neutral-700">
+                <tr class="border-b border-neutral-100">
+                  <td class="py-4 font-semibold">May 2024</td><td class="py-4">4 Mbps Pro Plan</td><td class="py-4 font-bold text-black">Rs. 2,600</td><td class="py-4">JazzCash Digital Wallet</td><td class="py-4 text-xs font-mono text-neutral-400">TXN-40893021</td>
+                </tr>
+                <tr class="border-b border-neutral-100">
+                  <td class="py-4 font-semibold">April 2024</td><td class="py-4">4 Mbps Pro Plan</td><td class="py-4 font-bold text-black">Rs. 2,600</td><td class="py-4">EasyPaisa Gateway</td><td class="py-4 text-xs font-mono text-neutral-400">TXN-39184022</td>
+                </tr>
+                <tr>
+                  <td class="py-4 font-semibold">March 2024</td><td class="py-4">4 Mbps Pro Plan</td><td class="py-4 font-bold text-black">Rs. 2,600</td><td class="py-4">Direct Cash (HQ Counter)</td><td class="py-4 text-xs font-mono text-neutral-400">TXN-38291012</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- UNIVERSAL ACTION CTA -->
+<section class="bg-black text-white py-24 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="font-display text-4xl md:text-5xl font-extrabold tracking-tight">Make the switch today.</h2>
+    <p class="mt-6 text-neutral-400 max-w-xl mx-auto leading-relaxed text-sm md:text-base">
+      Join thousands of satisfied homes and businesses across Bahawalpur, Liaqatpur, Feroza, Khanpur, and Zahir Pir.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
+      <button onclick="switchView('quote')" class="w-full sm:w-auto bg-brand-green text-white font-bold px-8 py-4 rounded-full hover:bg-[#095c2f] transition shadow-lg shadow-green-950/20">
+        Request a Free Quote
+      </button>
+      <a href="https://wa.me/923126822845" target="_blank" class="w-full sm:w-auto border border-neutral-700 bg-neutral-900 text-white font-bold px-8 py-4 rounded-full hover:bg-neutral-800 transition">
+        💬 WhatsApp Support
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- UNIVERSAL FOOTER -->
+<footer class="bg-white border-t border-neutral-100 py-16 text-sm text-neutral-500">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+    
+    <div class="space-y-4">
+      <span class="text-lg font-extrabold text-black">Air<span class="brand-green">Web</span></span>
+      <p class="leading-relaxed text-xs">AirWeb Communication Pvt Ltd. Providing high-speed, zero-downtime internet solutions for home and business clients across Pakistan for over 12 years.</p>
+      <p class="text-xs text-neutral-400 font-mono">Registered License No: PK-AW-9082-ISP</p>
+    </div>
+
+    <div>
+      <h4 class="font-extrabold text-black uppercase tracking-wider text-xs mb-4">Cities Serviced</h4>
+      <ul class="space-y-2 text-xs">
+        <li><button onclick="switchView('coverage'); setActiveCity('bwp')" class="hover:brand-green transition">Bahawalpur (Central HQ)</button></li>
+        <li><button onclick="switchView('coverage'); setActiveCity('lqp')" class="hover:brand-green transition">Liaqatpur Regional Network</button></li>
+        <li><button onclick="switchView('coverage'); setActiveCity('frz')" class="hover:brand-green transition">Feroza Regional Network</button></li>
+        <li><button onclick="switchView('coverage'); setActiveCity('knp')" class="hover:brand-green transition">Khanpur Commercial Network</button></li>
+        <li><button onclick="switchView('coverage'); setActiveCity('zhp')" class="hover:brand-green transition">Zahir Pir Regional Grid</button></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-extrabold text-black uppercase tracking-wider text-xs mb-4">Core Directory</h4>
+      <ul class="space-y-2 text-xs">
+        <li><button onclick="switchView('home')" class="hover:brand-green transition text-neutral-500">Home</button></li>
+        <li><button onclick="switchView('plans')" class="hover:brand-green transition text-neutral-500">Plans & Pricing</button></li>
+        <li><button onclick="switchView('about')" class="hover:brand-green transition text-neutral-500">Our Story</button></li>
+        <li><button onclick="switchView('contact')" class="hover:brand-green transition text-neutral-500">Contact Us</button></li>
+        <li><button onclick="switchView('quote')" class="hover:brand-green transition text-neutral-500">Request a Quote</button></li>
+        <li><button onclick="switchView('portal')" class="hover:brand-green transition text-neutral-500">Billing Portal Demo</button></li>
+      </ul>
+    </div>
+
+    <div class="space-y-4">
+      <h4 class="font-extrabold text-black uppercase tracking-wider text-xs mb-4">Central Office HQ</h4>
+      <p class="leading-relaxed text-xs">Haroon Plaza,<br>Circular Road, Bahawalpur,<br>Punjab, Pakistan.</p>
+      <p class="text-xs font-bold text-black pt-2">Helpline: <a href="tel:+923126822845" class="brand-green">0312-6822845</a></p>
+      <p class="text-xs font-bold text-black">Email: <a href="mailto:support@airwebcommunication.pk" class="brand-green">support@airwebcommunication.pk</a></p>
+    </div>
+
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-neutral-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+    <p>© 2024 AirWeb Communication Pvt Ltd. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-black transition">Terms of Service</a>
+      <a href="#" class="hover:text-black transition">Privacy Statement</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/923126822845" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#1DB954] hover:bg-[#1aa041] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-105 active:scale-95">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.751-1.455L0 24zm6.59-4.846c1.713.993 3.415 1.54 5.353 1.54 5.514 0 10.017-4.426 10.02-9.873.001-2.639-1.018-5.12-2.871-6.98-1.854-1.86-4.332-2.883-6.974-2.883-5.517 0-10.02 4.426-10.022 9.874-.001 1.956.52 3.865 1.511 5.539l-1.012 3.694 3.795-1.012zM17.65 15c-.273-.135-1.614-.793-1.863-.884-.248-.09-.43-.135-.61.135-.18.27-.7.884-.858 1.064-.158.18-.316.2-.59.066-1.127-.565-1.866-.994-2.6-1.63-.586-.505-.873-.865-1.258-1.556a.485.485 0 0 1 .158-.6c.15-.15.284-.33.42-.5.137-.164.18-.28.27-.464.09-.18.04-.345-.02-.48-.06-.135-.61-1.455-.83-1.92-.22-.53-.443-.45-.608-.45a4.2 4.2 0 0 0-.61-.01c-.18 0-.48.067-.73.344-.25.275-.95.93-.95 2.27 0 1.34.98 2.63 1.11 2.81.14.18 1.92 2.91 4.66 4.09.65.28 1.16.45 1.55.57.65.21 1.25.18 1.72.1.5-.08 1.61-.66 1.84-1.3.23-.63.23-1.18.16-1.3-.07-.12-.25-.18-.53-.315z"/>
+  </svg>
+</a>
+
+<script>
+  function switchView(viewId) {
+    document.querySelectorAll('.view-pane').forEach(pane => pane.classList.add('hidden'));
+    const activePane = document.getElementById('view-' + viewId);
+    if (activePane) {
+      activePane.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  }
+  function toggleMobileMenu() {
+    if (mobileMenu) mobileMenu.classList.add('hidden');
+  }
+
+  function updateCalculator() {
+    const slider = document.getElementById('planSlider');
+    const calcSpeed = document.getElementById('calcSpeed');
+    const calcPrice = document.getElementById('calcPrice');
+    const calcUse = document.getElementById('calcUse');
+
+    if (slider.value == 1) {
+      calcSpeed.innerText = "1 Mbps Core Link";
+      calcPrice.innerHTML = "Rs. 1,000 <span class='text-sm font-normal text-neutral-500'>/ month</span>";
+      calcUse.innerText = "Excellent option for direct WhatsApp, simple social feeds, and light browsing.";
+    } else if (slider.value == 2) {
+      calcSpeed.innerText = "2 Mbps Stable Link";
+      calcPrice.innerHTML = "Rs. 1,800 <span class='text-sm font-normal text-neutral-500'>/ month</span>";
+      calcUse.innerText = "Sufficient capacity for seamless SD video playback and multi-device chats.";
+    } else if (slider.value == 3) {
+      calcSpeed.innerText = "4 Mbps Pro System";
+      calcPrice.innerHTML = "Rs. 2,600 <span class='text-sm font-normal text-neutral-500'>/ month</span>";
+      calcUse.innerText = "Symmetric high-speed performance for multi-screen HD streaming and fast remote work.";
+    } else if (slider.value == 4) {
+      calcSpeed.innerText = "6 Mbps Max Hyper Link";
+      calcPrice.innerHTML = "Rs. 3,200 <span class='text-sm font-normal text-neutral-500'>/ month</span>";
+      calcUse.innerText = "Perfect for heavy gaming, continuous 4K playback, and massive downloads.";
+    }
+  }
+
+  function setActiveCity(cityKey) {
+    document.querySelectorAll('.city-tab-btn').forEach(btn => {
+      btn.classList.remove('border-brand-green');
+      btn.classList.add('border-neutral-200');
+    });
+    document.querySelectorAll('.city-content-panel').forEach(panel => panel.classList.add('hidden'));
+
+    const activeBtn = document.getElementById('btn-city-' + cityKey);
+    if (activeBtn) {
+      activeBtn.classList.remove('border-neutral-200');
+      activeBtn.classList.add('border-brand-green');
+    }
+    const activePanel = document.getElementById('city-content-' + cityKey);
+    if (activePanel) activePanel.classList.remove('hidden');
+  }
+
+  // Smart link: jump to Quote form with plan/service pre-selected
+  function requestQuoteForPlan(speedValue, serviceType) {
+    switchView('quote');
+    setTimeout(() => {
+      const speedSelect = document.getElementById('quoteSpeedSelect');
+      const serviceSelect = document.getElementById('quoteServiceSelect');
+      if (speedSelect && speedValue) {
+        for (let opt of speedSelect.options) {
+          if (opt.value === speedValue) { speedSelect.value = speedValue; break; }
+        }
+      }
+      if (serviceSelect && serviceType) {
+        for (let opt of serviceSelect.options) {
+          if (opt.value === serviceType) { serviceSelect.value = serviceType; break; }
+        }
+      }
+    }, 50);
+  }
+
+  // AJAX Form Submission Handler (works with Formspree)
+  async function submitFormAjax(event, statusElementId) {
+    event.preventDefault();
+    const form = event.target;
+    const status = document.getElementById(statusElementId);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    status.innerHTML = "Sending your request...";
+    status.className = "text-sm text-center text-neutral-500 font-semibold";
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.6";
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.innerHTML = "✅ Thank you! We've received your request and our team will contact you within 24 hours.";
+        status.className = "text-sm text-center brand-green font-bold";
+      } else {
+        status.innerHTML = "⚠️ Something went wrong. Please call us directly at 0312-6822845.";
+        status.className = "text-sm text-center text-red-600 font-bold";
+      }
+    } catch (error) {
+      status.innerHTML = "⚠️ Network error. Please call us directly at 0312-6822845.";
+      status.className = "text-sm text-center text-red-600 font-bold";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+  }
+
+  // Portal Simulation
+  let usageCounterInterval;
+  function loginPortalDemo() {
+    document.getElementById('portal-login-screen').classList.add('hidden');
+    document.getElementById('portal-dashboard').classList.remove('hidden');
+    let baseGb = 284.4281;
+    usageCounterInterval = setInterval(() => {
+      baseGb += Math.random() * 0.012;
+      document.getElementById('counterUsage').innerText = baseGb.toFixed(4) + " GB";
+    }, 1200);
+  }
+  function logoutPortalDemo() {
+    clearInterval(usageCounterInterval);
+    document.getElementById('portal-dashboard').classList.add('hidden');
+    document.getElementById('portal-login-screen').classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
